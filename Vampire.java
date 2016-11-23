@@ -29,6 +29,9 @@ public class Vampire extends Character{
     public int attack(Character objName){
 	int bloodDrink = super.attack(objName);
 	HP += bloodDrink;
+	if (HP > maxHP){
+	    HP = maxHP;
+	}
 	return bloodDrink;
      }
 
