@@ -6,7 +6,7 @@
 
 public abstract class Character{
     protected String name;
-    protected int HP, strength, defense, originalDefense;
+    protected int maxHP, HP, strength, defense, originalDefense;
     protected double attackSt, originalAttackSt;
 
     //sets name to an empty string, the other variables are already 0.

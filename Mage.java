@@ -11,12 +11,14 @@ public class Mage extends Character{
     public Mage(String s){
 	super();
 	name = s;
-	HP = 50;
+	maxHP = 50;
 	strength = 145;
 	originalDefense = 20;
 	originalAttackSt = 0.5;
 	defense = originalDefense;
 	attackSt = originalAttackSt;
+	HP = maxHP;
+
     }
 
 

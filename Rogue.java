@@ -9,12 +9,14 @@ public class Rogue extends Character{
     public Rogue(String s){
 	super();
 	name = s;
-	HP = 70;
+	maxHP = 70;
 	strength = 130;
 	originalDefense = 30;
 	originalAttackSt = 0.7;
 	defense = originalDefense;
 	attackSt = originalAttackSt;
+	HP = maxHP;
+
     }
 
 

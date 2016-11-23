@@ -10,10 +10,12 @@ public class Monster extends Character {
     public Monster() {
 	super();
 	name = "smaug";
-	HP = 150;
+	maxHP = 150;
 	strength = (int)(Math.random()*45 + 20);
 	defense = 20;
 	attackSt=1;
+	HP = maxHP;
+
     }
 
     public  String about(){

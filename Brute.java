@@ -13,12 +13,14 @@ public class Brute extends Character{
     public Brute(String s){
 	super();
 	name = s;
-	HP = 200;
+	maxHP = 200;
 	strength = 100;
 	originalDefense = 50;
 	originalAttackSt = 0.2;
 	defense = originalDefense;
 	attackSt = originalAttackSt;
+	HP = maxHP;
+
     }
 
     public  String about(){

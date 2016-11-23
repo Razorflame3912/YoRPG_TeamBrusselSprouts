@@ -11,12 +11,13 @@ public class Warrior extends Character {
     public Warrior(String s) {
 	super();
 	name = s;
-	HP = 125;
+	maxHP = 125;
 	strength = 100;
 	originalDefense = 40;
 	originalAttackSt= 0.4;
 	defense  = originalDefense;
 	attackSt = originalAttackSt;
+	HP = maxHP;
     }
 
     public String about(){

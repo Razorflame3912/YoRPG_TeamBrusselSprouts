@@ -12,12 +12,13 @@ public class Vampire extends Character{
     public Vampire(String s){
 	super();
 	name = s;
-	HP = 120;
+	maxHP = 120;
 	strength = 80;
 	originalDefense = 35;
 	originalAttackSt = 0.4;
 	defense = originalDefense;
 	attackSt = originalAttackSt;
+	HP = maxHP;
     }
 
 
