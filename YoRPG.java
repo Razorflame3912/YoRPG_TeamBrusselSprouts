@@ -128,10 +128,21 @@ public class YoRPG
     {
 	int i = 1;
 	int d1, d2;
+	int cont = 0;
 
-	if ( Math.random() >= ( difficulty / 3.0 ) )
-	    System.out.println( "\nNothing to see here. Move along!" );
-	else {
+	if ( Math.random() >= ( difficulty / 3.0 ) ){
+	    System.out.println( "\nNothing to see here." +
+				"\nPress 1 to continue on!");
+	
+        try {
+	    cont = Integer.parseInt( in.readLine() );
+	}
+	catch ( IOException e ) { }
+
+	if ( cont == 1)
+	    playTurn();
+	}
+	else{
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
 	    smaug = new Monster();
