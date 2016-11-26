@@ -16,8 +16,9 @@ public class YoRPG
 
     //each round, a Warrior and a Monster will be instantiated...
     private Character pat;   //Is it man or woman?
-    private Monster smaug; //Friendly generic monster name?
-
+    private Character smaug; //Friendly generic monster name?
+  
+    
     private int moveCount;
     private boolean gameOver;
     private int difficulty, classChoice;
@@ -145,7 +146,25 @@ public class YoRPG
 	else{
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = new Monster();
+	    //smaug = new Monster();
+	    int x =(int)( Math.random()*4);
+  if (x == 0) {
+      smaug = new Hydra(); //generates Hydra
+    }
+    else if (x == 1) {
+        smaug = new Orc(); //generates Orc
+	    }
+    else if(x == 2) {
+        smaug = new Merc(); //generates Merc
+    }
+    else if (x == 3) {
+        smaug = new TreeEnt(); //generates Ent
+    }
+    else {
+        smaug = new Monster(); //when all else fails - default
+    }
+
+	    
 	    System.out.println(smaug.about());
 
 	    while( smaug.isAlive() && pat.isAlive() ) {
