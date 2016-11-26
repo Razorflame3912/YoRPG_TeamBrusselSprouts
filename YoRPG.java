@@ -206,7 +206,16 @@ public class YoRPG
 	    }
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
-		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" +
+				    "\nPress 1 to continue.");
+		try {
+		    cont = Integer.parseInt( in.readLine() );
+		}
+		catch ( IOException e ) { }
+
+		if ( cont == 1){
+		    playTurn();
+		}
 		return true;
 	    }
 	    //option 3: the beast slays you
@@ -234,8 +243,9 @@ public class YoRPG
 	int encounters = 0;
 
 	while( encounters < MAX_ENCOUNTERS ) {
-	    if ( !game.playTurn() )
+	    if ( !game.playTurn() ){
 		break;
+	    }
 	    encounters++;
 	    System.out.println();
 	}
