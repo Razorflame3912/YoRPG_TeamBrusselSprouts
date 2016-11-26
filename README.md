@@ -3,7 +3,7 @@ Bryan Chan, David Apterman, Mansour Elsharawy, Period 3
 
 New Features:
 - Class VAMPIRE, which upon attacking, gains HP equivalent in amount to the damage dealt, up to a cap.
-
+- Class Hydra,Orc,Merc, and TreeEnt, each randomly generated per encounter 
 
 How to Play:
 1. Choose a difficulty (The higher the difficulty, the more monsters you'll encounter).
