@@ -3,11 +3,10 @@ Bryan Chan, David Apterman, Mansour Elsharawy, Period 3
 
 New Features:
 - Class VAMPIRE, which upon attacking, gains HP equivalent in amount to the damage dealt, up to a cap.
-- Class Hydra,Orc,Merc, and TreeEnt, each randomly generated per encounter 
-
+- Class Hydra,Orc,Merc, and TreeEnt, each randomly generated per encounter as a potential Monster.
 How to Play:
 1. Choose a difficulty (The higher the difficulty, the more monsters you'll encounter).
-2. Choose a name.
+2. Choose an (epic) name.
 3. Choose a class!
    - Warrior has relatively well rounded stats.
    - Mages have very low defense but very high attack.
