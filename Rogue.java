@@ -27,6 +27,8 @@ public class Rogue extends Character{
       public void specialize(){
 	attackSt *= 1.25;
 	defense *= 0.75;
+	System.out.println(getName() + " " + "used Assasinate!");
+       
     }
 
     public void normalize(){

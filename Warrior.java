@@ -27,6 +27,7 @@ public class Warrior extends Character {
     public void specialize(){
 	attackSt *= 1.25;
 	defense *= 0.75;
+	System.out.println(getName() + " " + "used Shield Bash!");
     }
 
     public void normalize(){
