@@ -195,7 +195,7 @@ public class YoRPG
 					    " for " + d2 + " points of damage.");
 			System.out.println(pat.getName() + "'s HP: " + pat.HP);
 			System.out.println("Ye Olde Monster's HP: " + smaug.HP);
-			pat.normalize();
+	        
 		    }//end while
 		    
 		    //option 1: you & the monster perish
