@@ -131,107 +131,110 @@ public class YoRPG
 	int d1, d2;
 	int cont = 0;
 
-	if ( Math.random() >= ( difficulty / 3.0 ) ){
-	    System.out.println( "\nNothing to see here." +
-				"\nPress 1 to continue on!");
-	
-        try {
-	    cont = Integer.parseInt( in.readLine() );
-	}
-	catch ( IOException e ) { }
-
-	if ( cont == 1)
-	    playTurn();
-	}
-	else{
-	    System.out.println( "\nLo, yonder monster approacheth!" );
-
-	    //smaug = new Monster();
-	    int x =(int)( Math.random()*4);
-  if (x == 0) {
-      smaug = new Hydra(); //generates Hydra
-    }
-    else if (x == 1) {
-        smaug = new Orc(); //generates Orc
-	    }
-    else if(x == 2) {
-        smaug = new Merc(); //generates Merc
-    }
-    else if (x == 3) {
-        smaug = new TreeEnt(); //generates Ent
-    }
-    else {
-        smaug = new Monster(); //when all else fails - default
-    }
-
-	    
-	    System.out.println(smaug.about());
-
-	    while( smaug.isAlive() && pat.isAlive() ) {
-
-		// Give user the option of using a special attack:
-		// If you land a hit, you incur greater damage,
-		// ...but if you get hit, you take more damage.
-		try {
-		    System.out.println( "\nDo you feel lucky?" );
-		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
-		    i = Integer.parseInt( in.readLine() );
-		}
-		catch ( IOException e ) { }
-
-		if ( i == 2 )
-		    pat.specialize();
-		else
-		    pat.normalize();
-
-		d1 = pat.attack( smaug );
-		d2 = smaug.attack( pat );
-
-		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-				    " points of damage.");
-
-		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
-				    " for " + d2 + " points of damage.");
-		System.out.println(pat.getName() + "'s HP: " + pat.HP);
-		System.out.println("Ye Olde Monster's HP: " + smaug.HP);
-		pat.normalize();
-	    }//end while
-
-	    //option 1: you & the monster perish
-	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-		System.out.println( "'Twas an epic battle, to be sure... " + 
-				    "You cut ye olde monster down, but " +
-				    "with its dying breath ye olde monster. " +
-				    "laid a fatal blow upon thy skull." );
-		return false;
-	    }
-	    //option 2: you slay the beast
-	    else if ( !smaug.isAlive() ) {
-		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" +
-				    "\nPress 1 to continue.");
+	while(pat.isAlive()){
+	    if ( Math.random() >= ( difficulty / 3.0 ) ){
+		System.out.println( "\nNothing to see here." +
+				    "\nPress 1 to continue on!");
 		
 		try {
 		    cont = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
-
-		if ( cont == 1){
+		if (cont == 1)
 		    playTurn();
-		    ;
-		} 
-		return true;
 	    }
-	    //option 3: the beast slays you
-	    else if ( !pat.isAlive() ) {
-		System.out.println( "Ye olde self hath expired. You got dead." );
-		return false;
+		
+		else{
+		    System.out.println( "\nLo, yonder monster approacheth!" );
+		    
+		    //smaug = new Monster();
+		    int x =(int)( Math.random()*4);
+		    if (x == 0) {
+			smaug = new Hydra(); //generates Hydra
+		    }
+		    else if (x == 1) {
+			smaug = new Orc(); //generates Orc
+		    }
+		    else if(x == 2) {
+			smaug = new Merc(); //generates Merc
+		    }
+	    else if (x == 3) {
+		smaug = new TreeEnt(); //generates Ent
 	    }
-	}//end else
-	
-	return true;
-    }//end playTurn()
+	    else {
+		smaug = new Monster(); //when all else fails - default
+	    }
+		    
+		    
+		    System.out.println(smaug.about());
+		    
+		    while( smaug.isAlive() && pat.isAlive() ) {
+			
+			// Give user the option of using a special attack:
+			// If you land a hit, you incur greater damage,
+		// ...but if you get hit, you take more damage.
+			try {
+			    System.out.println( "\nDo you feel lucky?" );
+			    System.out.println( "\t1: Nay.\n\t2: Aye!" );
+			    i = Integer.parseInt( in.readLine() );
+			}
+			catch ( IOException e ) { }
+			
+			if ( i == 2 )
+			    pat.specialize();
+			else
+			    pat.normalize();
+			
+			d1 = pat.attack( smaug );
+			d2 = smaug.attack( pat );
+			
+			System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+					    " points of damage.");
+			
+			System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+					    " for " + d2 + " points of damage.");
+			System.out.println(pat.getName() + "'s HP: " + pat.HP);
+			System.out.println("Ye Olde Monster's HP: " + smaug.HP);
+			pat.normalize();
+		    }//end while
+		    
+		    //option 1: you & the monster perish
+		    if ( !smaug.isAlive() && !pat.isAlive() ) {
+			System.out.println( "'Twas an epic battle, to be sure... " + 
+					    "You cut ye olde monster down, but " +
+					    "with its dying breath ye olde monster. " +
+					    "laid a fatal blow upon thy skull." );
+			return false;
+		    }
+		    //option 2: you slay the beast
+		    else if ( !smaug.isAlive() ) {
+			System.out.println( "HuzzaaH! Ye olde monster hath been slain!" +
+					    "\nPress 1 to continue.");
+			
+			try {
+			    cont = Integer.parseInt( in.readLine() );
+			}
+			catch ( IOException e ) { }
+			
+			if ( cont == 1){
+			    playTurn();
+			    ;
+			} 
+			return true;
+		    }
+		    //option 3: the beast slays you
+		    else if ( !pat.isAlive() ) {
+			System.out.println( "Ye olde self hath expired. You got dead." );
+			return false;
+			
+		    }
+		}//end else
+	    }
+	    
+	    return true;
+	}//end playTurn()
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+    
 
     public static void main( String[] args )
     {
@@ -243,7 +246,7 @@ public class YoRPG
 	//loading...
 	YoRPG game = new YoRPG();
 
-	int encounters = 0;
+        int encounters = 0;
 
 	while( encounters < MAX_ENCOUNTERS ) {
 	    if ( !game.playTurn() ){
