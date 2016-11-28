@@ -21,8 +21,18 @@ public class Hydra extends Character {
     public  String about(){
 	return "As you cross through a swamp a giant hydra attacks! 'Hsssssssss'";
     }
+    public int attack(Character objName){
+	double d = 0.0;
+	for (int x = 0; x < 8; x+=1) {
+	    d += (strength*attackSt*Math.random()*0.5 );
+	}
+	int dmg = (int) d;
+          objName.lowerHP(dmg);
+	return dmg;
+	
+    }
 
-      public void specialize(){
+    public void specialize(){
 	attackSt *= 1.25;
 	defense *= 0.75;
     }

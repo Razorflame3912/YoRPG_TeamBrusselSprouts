@@ -194,6 +194,7 @@ public class YoRPG
 				    " for " + d2 + " points of damage.");
 		System.out.println(pat.getName() + "'s HP: " + pat.HP);
 		System.out.println("Ye Olde Monster's HP: " + smaug.HP);
+		pat.normalize();
 	    }//end while
 
 	    //option 1: you & the monster perish
@@ -208,6 +209,7 @@ public class YoRPG
 	    else if ( !smaug.isAlive() ) {
 		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" +
 				    "\nPress 1 to continue.");
+		
 		try {
 		    cont = Integer.parseInt( in.readLine() );
 		}
@@ -215,7 +217,8 @@ public class YoRPG
 
 		if ( cont == 1){
 		    playTurn();
-		}
+		    ;
+		} 
 		return true;
 	    }
 	    //option 3: the beast slays you
@@ -224,7 +227,7 @@ public class YoRPG
 		return false;
 	    }
 	}//end else
-
+	
 	return true;
     }//end playTurn()
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
